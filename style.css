@@ -1,56 +1,110 @@
+/* ОБЩИЙ ФОН СТРАНИЦЫ */
 body {
-    font-family: Arial, sans-serif; /* шрифт страницы */
-    background-color: #fff0f5; /* фон страницы, например лавандовый */
-    color: #333; /* цвет текста */
-    line-height: 1.6;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px;
+    background-image: url('images/fondo.jpg'); 
+    background-attachment: fixed; 
+    background-size: cover; 
+    background-position: center; 
+    background-color: #1b5e20; 
 }
 
+/* ГЛАВНЫЙ ЗАГОЛОВОК (CAPERUCITA ROJA) */
 h1 {
-    color: #d63384; /* заголовок розовый */
+    color: #ffffff;
     text-align: center;
+    font-size: 4em;
+    margin-bottom: 60px;
+    font-variant: small-caps;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
-p {
-    font-size: 18px;
-}
-body {
-    font-family: 'Arial', sans-serif; /* шрифт текста */
-    background-color: #fff8f0; /* нежный кремовый фон */
-    color: #333; /* основной цвет текста */
-    line-height: 1.6;
-    margin: 20px;
-    padding: 20px;
+/* МОДУЛИ (КАРТОЧКИ ГЛАВ) */
+.module {
+    display: flex;
+    align-items: center;
+    /* Бежевый полупрозрачный фон */
+    background: #fdfaf588; 
+    /* Четкая рамка */
+    border: 2px solid #e0e0e0; 
+    padding: 40px;
+    border-radius: 30px;
+    margin-bottom: 50px;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-h1 {
-    color: #d63384; /* ярко-розовый заголовок */
-    text-align: center;
-    font-size: 3em;
-    margin-bottom: 0.5em;
+.module:hover {
+    transform: translateY(-5px);
 }
 
+.module.reverse {
+    flex-direction: row-reverse;
+}
+
+/* ТЕКСТ ВНУТРИ БЛОКА */
+.text-content {
+    flex: 1;
+    padding: 0 30px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ЯРКИЙ ЗАГОЛОВОК ГЛАВЫ */
 h2 {
-    color: #ff6f61; /* заголовки разделов */
-    font-size: 2em;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-}
-
-p {
-    font-size: 18px;
-    margin-bottom: 1em;
-}
-
-p:last-child {
-    font-style: italic; /* автор внизу курсивом */
-    text-align: right;
-}
-
-section {
-    background-color: #fff0f5; /* легкий фон для разделов */
-    padding: 15px;
-    border-radius: 10px;
+    color: #0c0c0c; 
+    font-weight: 800; /* Максимальная яркость и толщина */
+    font-size: 2.5em; 
+    margin-top: 0;
     margin-bottom: 15px;
-    box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
+    letter-spacing: -0.5px;
+}
+
+/* ЯРКИЙ ОСНОВНОЙ ТЕКСТ */
+p {
+    color: #000000; /* Чистый черный для максимальной яркости */
+    font-size: 1.35rem; 
+    line-height: 1.7; 
+    font-weight: 500; /* Чуть плотнее обычного */
+    margin: 0;
+}
+
+/* ИЗОБРАЖЕНИЯ С БЕЛОЙ РАМКОЙ */
+img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 8px solid #ffffff; /* Толстая белая рамка */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ПОДПИСЬ АВТОРА */
+.author {
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 50px;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/* АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ */
+@media (max-width: 768px) {
+    .module, .module.reverse {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .text-content {
+        padding: 20px 0;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+    }
 }
